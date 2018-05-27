@@ -3,6 +3,11 @@
 @section('title', 'Homepage')
 
 @section('content')
+    <div class="alert alert-info alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <h5><i class="icon fa fa-info"></i> Example Message Componnent!</h5>
+        Example Message Componnent!  Example Message Componnent!  Example Message Componnent!
+    </div>
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Welcome</h4>

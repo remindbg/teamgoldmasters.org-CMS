@@ -14,9 +14,7 @@
 </aside>
 <!-- /.control-sidebar -->
 </div>
-
 <!-- ./wrapper -->
-
 <!-- jQuery -->
 <script src="{{URL::asset('plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
