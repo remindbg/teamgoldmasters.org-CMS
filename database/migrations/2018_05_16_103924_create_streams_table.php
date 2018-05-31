@@ -16,6 +16,7 @@ class CreateStreamsTable extends Migration
         Schema::create('streams', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->string('url');
         });
     }
 

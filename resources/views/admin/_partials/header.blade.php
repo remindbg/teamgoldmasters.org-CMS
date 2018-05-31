@@ -61,6 +61,7 @@
             </li>
         </ul>
     </nav>
+
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="/" class="brand-link">
@@ -73,90 +74,84 @@
         <div class="sidebar">
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                    <li class="nav-item">
-                        <a href="/" class="nav-link">
-                            <i class="nav-icon fa fa-home"></i>
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-newspaper-o"></i>
                             <p>
-                                Homepage
+                                News Management
+                                <i class="right fa fa-angle-left"></i>
                             </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/admin/articles/" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>All Articles</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/admin/articles/create" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>New Article</p>
+                                </a>
+                            </li>
+                            <hr>
+                            <li class="nav-item">
+                                <a href="/admin/categories" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>All Categories</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/admin/categories/create" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>New Category</p>
+                                </a>
+                            </li>
+
+                        </ul>
                     </li>
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fa fa-newspaper-o"></i>
                             <p>
-                                News
+                                Members And Users
                                 <i class="right fa fa-angle-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/news/" class="nav-link">
+                                <a href="/admin/users/" class="nav-link">
                                     <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Starcraft 2</p>
+                                    <p>All Users</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="/admin/members/" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>All Team Members</p>
+                                </a>
+                            </li>
+
                         </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/mmrstats/" class="nav-link">
-                            <i class="nav-icon fa fa-stethoscope"></i>
-                            <p>
-                                MMR And Stats
-                            </p>
-                        </a>
                     </li>
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-users"></i>
+                            <i class="nav-icon fa fa-newspaper-o"></i>
                             <p>
-                                Members
+                                Pages Text Management
                                 <i class="right fa fa-angle-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/members/sc2/" class="nav-link">
+                                <a href="/admin/pages/homepage" class="nav-link">
                                     <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Starcraft 2</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Soon</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Soon</p>
+                                    <p>Homepage Text</p>
                                 </a>
                             </li>
                         </ul>
-                    </li>
-
-
-
-
-                    <li class="nav-header">Other Pages</li>
-                    <li class="nav-item">
-                        <a href="/contact/" class="nav-link">
-                            <i class="nav-icon fa fa-file"></i>
-                            <p>Contact</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/challengeus/" class="nav-link">
-                            <i class="nav-icon fa fa-file"></i>
-                            <p>Challenge US</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/streams/" class="nav-link">
-                            <i class="nav-icon fa fa-file"></i>
-                            <p>Streams</p>
-                        </a>
                     </li>
 
                 </ul>
