@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Article;
 use App\Category;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 
 class ArticleController extends Controller
 {
@@ -13,13 +16,19 @@ class ArticleController extends Controller
      *
      * @return Response
      */
-    public function adminindex()
-    {
-        $articles = Article::with('category')->get();
-        $test = Article::find(1)->with('category')->get();
+
+    public function adminAll() {
+        $articles = Article::with('user','category')->get();
 
         return view('admin.articles.all',compact('articles'));
     }
+    public function index()
+    {
+        $articles = Article::with('user,category');
+        return view('articles.index',compact('articles'));
+
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -28,7 +37,8 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('admin.articles.create');
+        $category = Category::all();
+        return view('admin.articles.create',compact('category'));
     }
 
     /**
@@ -36,9 +46,16 @@ class ArticleController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(Request $request)
     {
+        $article = new Article();
+        $article->title = $request['title'];
+        $article->body = $request['body'];
+        $article->category_id = Input::get('category');
 
+        $article->user_id =  Auth::id();
+        $article->save();
+        return redirect()->to('/admin/articles')->with('message', 'New Article Added');
     }
 
     /**
@@ -60,7 +77,10 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $article = Article::find($id);
+        $category = Category::all();
+
+        return view('admin.articles.edit',compact('article','category'));
     }
 
     /**
@@ -69,9 +89,14 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update($id, Request $request)
     {
-        //
+        $article = Article::find($id);
+        $article->title = $request['title'];
+        $article->body = $request['body'];
+        $article->category_id = Input::get('category');
+        $article->save();
+        return redirect()->to('/admin/articles')->with('message', 'Edited');
     }
 
     /**
@@ -82,7 +107,9 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Article::destroy($id);
+        return redirect()->to('/admin/articles')->with('message', 'Deleted!');
+
     }
 
 }

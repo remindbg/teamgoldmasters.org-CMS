@@ -10,22 +10,19 @@
                     <span class="info-box-text">Clan Members</span>
                     <span class="info-box-number">13</span>
                 </div>
-
             </div>
         </div>
     </div>
     <div class="card">
         <div class="card-body">
             <div class="card-title">Recent News</div>
-
-
+            <span>Clan War vs MegaNoobs </span> - <i class="small">13.05.2005</i>
         </div>
 
     </div>
     <div class="card">
         <div class="card-body">
             <div class="card-title">News Categories</div>
-
 
         </div>
 

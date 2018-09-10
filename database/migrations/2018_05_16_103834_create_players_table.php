@@ -15,10 +15,8 @@ class CreatePlayersTable extends Migration
     {
         Schema::create('players', function (Blueprint $table) {
             $table->increments('id');
+            $table->json('about');
             $table->timestamps();
-            $table->string('race');
-            $table->string('bnetprofile');
-
         });
     }
 

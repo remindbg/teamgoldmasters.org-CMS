@@ -1,13 +1,6 @@
 @extends('layouts.front')
-
 @section('title', 'Homepage')
-
 @section('content')
-    <div class="alert alert-info alert-dismissible">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <h5><i class="icon fa fa-info"></i> Example Message Componnent!</h5>
-        Example Message Componnent!  Example Message Componnent!  Example Message Componnent!
-    </div>
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Welcome</h4>
@@ -16,27 +9,42 @@
     </div>
     <div class="card text-center">
         <div class="card-body">
-            <h4 class="card-title">Online Streams</h4>
-            <p class="card-text">TODO Streams</p>
+            <h4 class="card-title">Stream</h4>
+            <div id="stream"></div>
         </div>
     </div>
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Recent News</h4>
-            <div class="media border p-1">
-                <img src="{{URL::asset('images/article.jpg')}}" alt="John Doe" class="mr-3 mt-3 img-responsive"
-                     style="width:240px;">
-                <div class="media-body">
-                    <h3>Article Title example test</h3>
-                    <small><i>Posted on February 19, 2016</i></small></h4>
-                    <p>Lorem ipsum...</p>
+            @foreach($articles as $article)
+                <div class="col-lg-9">
+                    <h5>{{$article->title}}</h5>
+                    <small><i>Posted on {{$article->created_at}} By {{$article->user->name}}</i></small>
+                    <p>{{$article->body}}</p>
+                    <hr>
                 </div>
-            </div>
-
+            @endforeach
         </div>
-        <!-- /.card-body -->
-
-        <!-- /.card-title -->
     </div>
-
 @endsection
+
+@section('css')
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+@endsection
+
+@section('scripts')
+    <script type="text/javascript">
+        var embed = new Twitch.Embed("stream", {
+            width: 854,
+            height: 480,
+            channel: "fetzer",
+            layout: "video",
+            autoplay: false
+        });
+
+        embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
+            var player = embed.getPlayer();
+            player.play();
+        });
+    </script>
+@endsection()

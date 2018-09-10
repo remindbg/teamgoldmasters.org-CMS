@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Article;
+use App\Category;
 class CategoryController extends Controller
 {
     /**
@@ -16,6 +17,12 @@ class CategoryController extends Controller
         //
     }
 
+    public function adminAll() {
+        $categories = Category::with('articles')->get();
+        //dd($categories);
+        return view('admin.categories.all',compact('categories'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -23,7 +30,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -31,9 +38,13 @@ class CategoryController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(Request $request)
     {
-        //
+        $category = new Category();
+        $category->name = $request['name'];
+        $category->save();
+        return redirect()->route('catsadmin')->with('message', 'New Category Added');
+
     }
 
     /**
@@ -55,7 +66,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cat = Category::find($id);
+
+        return view('admin.categories.edit',compact('cat'));
     }
 
     /**
@@ -77,7 +90,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+         Category::destroy($id);
+        return redirect()->route('catsadmin')->with('message', 'Deleted!');
+
     }
 
 }

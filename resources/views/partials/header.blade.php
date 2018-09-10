@@ -16,9 +16,7 @@
     <link rel="stylesheet" href="{{URL::asset('/dist/css/adminlte.min.css')}}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    <style>
-
-    </style>
+        @yield('css')
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -34,11 +32,9 @@
                 <a href="/" class="nav-link">Home</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="/contact" class="nav-link">Contact</a>
+                <a href="/contact" class="nav-link">Contacts</a>
             </li>
         </ul>
-
-        <!-- SEARCH FORM -->
         <form class="form-inline ml-3">
             <div class="input-group input-group-sm">
                 <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
@@ -52,8 +48,6 @@
 
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
-
-
             <li class="nav-item">
                 <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
                     <i class="fa fa-th-large"></i>
@@ -98,14 +92,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a href="/mmrstats/" class="nav-link">
-                            <i class="nav-icon fa fa-stethoscope"></i>
-                            <p>
-                                MMR And Stats
-                            </p>
-                        </a>
-                    </li>
+
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fa fa-users"></i>
@@ -135,27 +122,11 @@
                             </li>
                         </ul>
                     </li>
-
-
-
-
                     <li class="nav-header">Other Pages</li>
                     <li class="nav-item">
                         <a href="/contact/" class="nav-link">
                             <i class="nav-icon fa fa-file"></i>
-                            <p>Contact</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/challengeus/" class="nav-link">
-                            <i class="nav-icon fa fa-file"></i>
-                            <p>Challenge US</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/streams/" class="nav-link">
-                            <i class="nav-icon fa fa-file"></i>
-                            <p>Streams</p>
+                            <p>Contacts</p>
                         </a>
                     </li>
 

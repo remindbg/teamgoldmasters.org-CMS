@@ -6,7 +6,6 @@
     @if (Session::has('message'))
             <div class="alert alert-info alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <h5><i class="icon fa fa-info"></i> Error!</h5>
                 {{ Session::get('message') }}
             </div>
     @endif
@@ -15,12 +14,12 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">All Articles</h4>
-
             <table class="table table-condensed">
                 <tbody><tr>
                     <th style="width: 10px">#</th>
                     <th>title</th>
                     <th>category</th>
+                    <th>date</th>
                     <th style="width: 40px">Action</th>
                 </tr>
                 @foreach($articles as $article)
@@ -30,16 +29,23 @@
                     <td>
                        {{$article->category->name}}
                     </td>
-                    <td><span class="badge bg-danger"><a href="/admin/articles/edit/{{$article->id}}">Edit</a></span></td>
+                    <td>
+                        {{$article->created_at}}
+                    </td>
+                    <td>
+                        <span class="badge bg-success"><a href="/admin/articles/{{$article->id}}/edit">Edit</a></span>
+                        <form action="{{'articledelete'}}" method="post">
+                            @csrf
+                            <span class="badge bg-danger"><a href="{{route('articledelete',$article->id)}}" onclick="return confirm('U sure bro?')">Delete</a></span>
+                        </form>
+                    </td>
                 </tr>
-                    @endforeach
+                @endforeach
 
 
                 </tbody></table>
         </div>
-        <!-- /.card-body -->
 
-        <!-- /.card-title -->
     </div>
 
 @endsection
