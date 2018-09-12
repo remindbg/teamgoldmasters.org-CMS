@@ -4,6 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use  Illuminate\Support\Facades\Schema;
+use App\Article;
+use App\Category;
+use App\User;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -14,6 +17,16 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
+        view()->composer(['partials.sidebar','partials.header'], function ($view) {
+
+           $allarticles = Article::orderBy('created_at','desc')->get();
+           $allcategories = Category::all();
+
+           $view->with(compact('allarticles','allcategories'));
+
+        });
+
     }
 
     /**

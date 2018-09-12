@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $articles = Article::with('category','user')->get();
+        $articles = Article::with('category','user')->latest()->get();
 
         return view('welcome',compact('articles'));
     }

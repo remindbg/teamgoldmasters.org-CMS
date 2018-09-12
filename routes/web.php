@@ -16,6 +16,8 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('welcome');
+Route::get('/articles/{id}','ArticleController@show');
+Route::get('/cat/{id}','CategoryController@show');
 
 
 // ADMIN

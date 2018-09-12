@@ -66,7 +66,10 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        //
+        $article = Article::find($id)->with('category','user')->first();
+
+        return view('articles.single',compact('article'));
+
     }
 
     /**

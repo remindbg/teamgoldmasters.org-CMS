@@ -31,9 +31,6 @@
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="/" class="nav-link">Home</a>
             </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="/contact" class="nav-link">Contacts</a>
-            </li>
         </ul>
         <form class="form-inline ml-3">
             <div class="input-group input-group-sm">
@@ -84,15 +81,16 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="/news/" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Starcraft 2</p>
-                                </a>
-                            </li>
+                            @foreach($allcategories as $allcat)
+                                <li class="nav-item">
+                                    <a href="/cat/{{$allcat->id}}/" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>{{$allcat->name}}</p>
+                                    </a>
+                                </li>
+                            @endforeach
                         </ul>
                     </li>
-
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fa fa-users"></i>
@@ -103,7 +101,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/members/sc2/" class="nav-link">
+                                <a href="/members/" class="nav-link">
                                     <i class="fa fa-circle-o nav-icon"></i>
                                     <p>Starcraft 2</p>
                                 </a>

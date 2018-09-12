@@ -16,14 +16,20 @@
     <div class="card">
         <div class="card-body">
             <div class="card-title">Recent News</div>
-            <span>Clan War vs MegaNoobs </span> - <i class="small">13.05.2005</i>
+            @foreach($allarticles as $article)
+                <a href="/articles/{{$article->id}}"><span>{{$article->title}}</span></a> - <i class="small">{{$article->created_at}}</i>
+                <hr>
+            @endforeach
         </div>
 
     </div>
     <div class="card">
         <div class="card-body">
             <div class="card-title">News Categories</div>
-
+            @foreach($allcategories as $allcat)
+                <a href="/cat/{{$allcat->id}}/"><span>{{$allcat->name}}</span></a></i>
+                <hr>
+            @endforeach
         </div>
 
     </div>
