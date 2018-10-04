@@ -33,6 +33,14 @@ Route::get('/admin/articles/{id}/edit','ArticleController@edit');
 Route::post('/admin/articles/{id}/edit','ArticleController@update');
 
 
+// members
+Route::get('/admin/members','MembersController@index'); // all admin members
+Route::get('/admin/members/create','MembersController@create'); // add new member ( view )
+Route::post('/admin/members','MembersController@store')->name('createmember'); // store new member
+Route::get('/admin/members/{id}/edit','MembersController@edit');
+Route::post('/admin/members/{id}/edit','MembersController@update');
+Route::get('/admin/members/delete/{id}','ArticleController@destroy')->name('memberdelete');
+
 
 // cats
 

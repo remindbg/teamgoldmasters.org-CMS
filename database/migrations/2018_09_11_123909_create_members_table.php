@@ -15,11 +15,11 @@ class CreateMembersTable extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
             $table->string('name');
             $table->string('country')->nullable();
             $table->string('race')->nullable();
             $table->string('about')->nullable();
+            $table->timestamps();
         });
     }
 
