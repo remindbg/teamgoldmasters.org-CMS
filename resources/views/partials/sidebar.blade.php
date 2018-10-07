@@ -1,6 +1,34 @@
 <div class="col-sm-3">
     <div class="card">
         <div class="card-body">
+            <div class="card-title small">Profile</div>
+            <div class="card-body">
+                @if (Auth::guest())
+                    <a href="{{ route('login') }}">Login</a>
+                    <a href="{{ route('register') }}">Register</a>
+                @else
+
+                @if(Auth::user()->role == 'admin')
+                        <a href="/admin/">Admin Panel</a> <br>
+                 @endif
+                    <a href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+
+                @endif
+
+            </div>
+
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
             <div class="card-title">General Info</div>
             <!-- /.panel-header -->
             <div class="info-box mb-3 bg-info">

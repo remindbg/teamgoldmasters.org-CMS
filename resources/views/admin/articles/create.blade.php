@@ -14,7 +14,9 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">New Article</h4>
-                    <form role="form" method="POST" action="/admin/articles">
+            <hr>
+
+            <form role="form" method="POST" action="/admin/articles">
                         <!-- text input -->
                         @csrf
                         <div class="form-group">

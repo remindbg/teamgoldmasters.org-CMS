@@ -27,5 +27,6 @@
 <script src="{{URL::asset('dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{URL::asset('dist/js/demo.js')}}"></script>
+@yield('scripts')
 </body>
 </html>

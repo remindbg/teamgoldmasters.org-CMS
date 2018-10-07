@@ -38,6 +38,7 @@ class MembersController extends Controller
         $member->name = $request['name'];
         $member->about = $request['about'];
         $member->race = $request['race'];
+        $member->country = $request['country'];
         $member->save();
         return redirect()->to('/admin/members')->with('message', 'New Member Added');
 
@@ -75,7 +76,9 @@ class MembersController extends Controller
      * @return Response
      */
     public function update($id,Request $request)
+
     {
+
         $member = Members::find($id);
         $member->name = $request['name'];
         $member->about = $request['about'];

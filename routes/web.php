@@ -11,8 +11,6 @@
 |
 */
 
-
-
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('welcome');
@@ -39,7 +37,16 @@ Route::get('/admin/members/create','MembersController@create'); // add new membe
 Route::post('/admin/members','MembersController@store')->name('createmember'); // store new member
 Route::get('/admin/members/{id}/edit','MembersController@edit');
 Route::post('/admin/members/{id}/edit','MembersController@update');
-Route::get('/admin/members/delete/{id}','ArticleController@destroy')->name('memberdelete');
+Route::get('/admin/members/delete/{id}','MembersController@destroy')->name('memberdelete');
+
+
+
+// Users
+Route::get('/admin/users/delete/{id}','UserController@destroy')->name('userdelete');
+Route::get('/admin/users','UserController@index');
+Route::get('/admin/members/{id}/edit','UserController@edit');
+Route::post('/admin/members/{id}/edit','UserController@update');
+
 
 
 // cats

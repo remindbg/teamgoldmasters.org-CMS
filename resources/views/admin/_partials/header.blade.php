@@ -19,6 +19,9 @@
     <style>
 
     </style>
+    <link rel="stylesheet" href="{{asset('flags/flags.css')}}">
+
+    @yield('css')
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->

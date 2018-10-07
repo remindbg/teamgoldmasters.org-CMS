@@ -14,6 +14,9 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">All Articles</h4>
+            <hr>
+            <a href="/admin/articles/create"><button type="submit" class="btn btn-primary btn-sm">New Article</button></a>
+            <hr>
             <table class="table table-condensed">
                 <tbody><tr>
                     <th style="width: 10px">#</th>
