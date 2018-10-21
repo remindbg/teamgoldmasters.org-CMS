@@ -18,6 +18,16 @@ class UserController extends Controller
         return view('admin.users.all',compact('members'));
     }
 
+
+    public function makeAdmin($id) {
+        $user = User::find($id);
+        $user->role = 'admin';
+        $user->save();
+        $members = User::all();
+        return view('admin.users.all',compact('members'))->with('message', 'role admin granted');
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *

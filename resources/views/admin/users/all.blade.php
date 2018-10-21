@@ -3,14 +3,6 @@
 @section('title', 'Users')
 
 @section('content')
-    @if (Session::has('message'))
-        <div class="alert alert-info alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            {{ Session::get('message') }}
-        </div>
-    @endif
-
-
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">All Users</h4>
@@ -18,10 +10,10 @@
             <table class="table table-condensed">
                 <tbody><tr>
                     <th style="width: 10px">#</th>
-                    <th>name</th>
-                    <th>email</th>
+                    <th>Name</th>
+                    <th>Email</th>
                     <th>Role</th>
-                    {{--<th style="width: 40px">Action</th>--}}
+                    <th>Action</th>
                 </tr>
                 @foreach($members as $member)
                     <tr>
@@ -32,6 +24,11 @@
                         </td>
                         <td>
                             {{$member->role}}
+                        </td>
+                        <td>
+                            @if(\Illuminate\Support\Facades\Auth::id() == 1 && $member->id != 1)
+                                <a href="/admin/users/{{$member->id}}/makeadmin">Make Admin</a>
+                             @endif
                         </td>
                         {{--<td>--}}
                             {{--<span class="badge bg-success"><a href="/admin/users/{{$member->id}}/edit">Edit</a></span>--}}

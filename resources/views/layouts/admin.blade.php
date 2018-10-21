@@ -8,7 +8,6 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-lg-9">
-                    <h2>@yield('title')</h2>
                     @if (Session::has('message'))
                         <div class="alert alert-info alert-dismissible">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -18,7 +17,6 @@
                     @endif
                     @yield('content')
                 </div>
-
             </div>
         </div><!-- /.container-fluid -->
     </section>

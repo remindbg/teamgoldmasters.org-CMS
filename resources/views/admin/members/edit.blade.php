@@ -3,12 +3,7 @@
 @section('title', 'Edit Member')
 
 @section('content')
-    @if (Session::has('message'))
-        <div class="alert alert-info alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            {{ Session::get('message') }}
-        </div>
-    @endif
+
 
     <div class="card">
         <div class="card-body">
@@ -27,14 +22,20 @@
                 </div>
 
                 <select class="form-control" name="race">
-                    <option value="Protoss">Protoss</option>
-                    <option value="Terran">Terran</option>
-                    <option value="Zerg">Zerg</option>
+                    <option value="Protoss" {{ $member->race == 'Protoss' ? 'selected':'' }}>Protoss</option>
+                    <option value="Terran"  {{ $member->race == 'Terran' ? 'selected':'' }}>Terran</option>
+                    <option value="Zerg"  {{ $member->race == 'Zerg' ? 'selected':'' }}>Zerg</option>
                 </select>
                 <div>
                     <hr>
                 </div>
-                <button type="submit" class="btn btn-primary btn-sm">Edit</button>
+                <hr>
+                <div class="form-group">
+                    <label>Country</label>
+                    <select class="input-medium bfh-countries form-control" name="country" data-country="{{ $member->country}}"></select>
+                </div>
+                <hr>
+                <button type="submit" class="btn btn-primary btn-sm">Edit Member</button>
 
             </form>
 

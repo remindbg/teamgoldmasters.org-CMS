@@ -11,6 +11,13 @@ class MembersController extends Controller
      *
      * @return Response
      */
+
+    public function frontindex() {
+        $members = Members::all();
+        return view('members.all',compact('members'));
+
+
+    }
     public function index()
     {
         $members = Members::all();
@@ -52,8 +59,7 @@ class MembersController extends Controller
      */
     public function show($id)
     {
-        $member = Members::find($id);
-        return view('members.single',compact('member'));
+
 
     }
 
@@ -83,6 +89,7 @@ class MembersController extends Controller
         $member->name = $request['name'];
         $member->about = $request['about'];
         $member->race = $request['race'];
+        $member->country = $request['country'];
         $member->save();
         return redirect()->to('/admin/members/')->with('message', 'Edited');
 

@@ -44,15 +44,10 @@
 @endsection
 
 @section('scripts')
-    <script src="{{asset('bhelper/dist/js/bootstrap-formhelpers.min.js')}}"></script>
 
-    <script>
-
-    </script>
 
 @endsection
 @section('css')
 
-    <link rel="stylesheet" href="{{asset('bhelper/dist/css/bootstrap-formhelpers.css')}}">
 
 @endsection

@@ -20,6 +20,7 @@
 
     </style>
     <link rel="stylesheet" href="{{asset('flags/flags.css')}}">
+    <link rel="stylesheet" href="{{asset('bhelper/dist/css/bootstrap-formhelpers.css')}}">
 
     @yield('css')
 </head>

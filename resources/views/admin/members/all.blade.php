@@ -14,9 +14,11 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">All SC2 Members</h4>
+
             <hr>
             <a href="/admin/members/create"><button type="submit" class="btn btn-primary btn-sm">New Member</button></a>
             <hr>
+            <span class="bfh-countries" data-country="US" data-flags="true">test</span>
             <table class="table table-condensed">
                 <tbody><tr>
                     <th style="width: 10px">#</th>
@@ -46,6 +48,8 @@
                 @endforeach
                 </tbody>
             </table>
+            <img src="blank.gif" class="flag flag-bg" alt="" />
+
         </div>
 
     </div>

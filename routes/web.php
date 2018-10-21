@@ -42,10 +42,8 @@ Route::get('/admin/members/delete/{id}','MembersController@destroy')->name('memb
 
 
 // Users
-Route::get('/admin/users/delete/{id}','UserController@destroy')->name('userdelete');
 Route::get('/admin/users','UserController@index');
-Route::get('/admin/members/{id}/edit','UserController@edit');
-Route::post('/admin/members/{id}/edit','UserController@update');
+Route::get('/admin/users/{id}/makeadmin','UserController@makeAdmin');
 
 
 
@@ -63,3 +61,8 @@ Route::get('/admin',function() {
    return view('admin.home');
 })->middleware('isAdmin');
 ;
+
+
+// Other Pages
+Route::get('/members/','MembersController@frontindex');
+

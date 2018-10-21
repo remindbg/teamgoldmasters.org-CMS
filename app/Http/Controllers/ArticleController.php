@@ -18,13 +18,13 @@ class ArticleController extends Controller
      */
 
     public function adminAll() {
-        $articles = Article::with('user','category')->get();
+        $articles = Article::with('user','category')->latest()->get();
 
         return view('admin.articles.all',compact('articles'));
     }
     public function index()
     {
-        $articles = Article::with('user,category');
+        $articles = Article::with('user,category')->orderBy('created_at','asc');
         return view('articles.index',compact('articles'));
 
     }

@@ -16,7 +16,11 @@
     <link rel="stylesheet" href="{{URL::asset('/dist/css/adminlte.min.css')}}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-        @yield('css')
+    <link rel="stylesheet" href="{{asset('flags/flags.css')}}">
+    <link rel="stylesheet" href="{{asset('bhelper/dist/css/bootstrap-formhelpers.css')}}">
+
+
+    @yield('css')
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -124,7 +128,7 @@
                     <li class="nav-item">
                         <a href="/contact/" class="nav-link">
                             <i class="nav-icon fa fa-file"></i>
-                            <p>Contacts</p>
+                            <p>Contact US</p>
                         </a>
                     </li>
 
