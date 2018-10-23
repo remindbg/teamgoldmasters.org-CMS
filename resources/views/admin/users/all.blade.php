@@ -26,7 +26,7 @@
                             {{$member->role}}
                         </td>
                         <td>
-                            @if(\Illuminate\Support\Facades\Auth::id() == 1 && $member->id != 1)
+                            @if(\Illuminate\Support\Facades\Auth::id() == 1 && $member->id != 1  && $member->role != 'admin')
                                 <a href="/admin/users/{{$member->id}}/makeadmin">Make Admin</a>
                              @endif
                         </td>
