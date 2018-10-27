@@ -6,6 +6,16 @@ use Illuminate\Http\Request;
 use App\Members;
 class MembersController extends Controller
 {
+
+    /**
+     * Enforce middleware.
+     */
+    public function __construct()
+    {
+        $this->middleware('isAdmin')->except(['frontindex', ]);
+
+    }
+
     /**
      * Display a listing of the resource.
      *

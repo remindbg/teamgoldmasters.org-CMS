@@ -11,6 +11,14 @@ use Illuminate\Support\Facades\Input;
 
 class ArticleController extends Controller
 {
+
+    /**
+     * Enforce middleware.
+     */
+    public function __construct()
+    {
+        $this->middleware('isAdmin', ['except' => ['index', 'show']]);
+    }
     /**
      * Display a listing of the resource.
      *

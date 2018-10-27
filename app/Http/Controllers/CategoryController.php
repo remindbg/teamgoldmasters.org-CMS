@@ -7,6 +7,14 @@ use App\Article;
 use App\Category;
 class CategoryController extends Controller
 {
+
+    /**
+     * Enforce middleware.
+     */
+    public function __construct()
+    {
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     public function adminAll() {
@@ -55,7 +63,9 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $category = Category::findOrFail($id);
+
+        return view('categories.single',compact('category'));
     }
 
     /**
