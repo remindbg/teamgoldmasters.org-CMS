@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Members;
 use Illuminate\Support\ServiceProvider;
 use  Illuminate\Support\Facades\Schema;
 use App\Article;
@@ -22,8 +23,8 @@ class AppServiceProvider extends ServiceProvider
 
            $allarticles = Article::orderBy('created_at','desc')->get();
            $allcategories = Category::all();
-
-           $view->with(compact('allarticles','allcategories'));
+            $members = Members::all();
+           $view->with(compact('allarticles','allcategories','members'));
 
         });
 

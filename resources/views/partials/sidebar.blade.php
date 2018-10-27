@@ -36,7 +36,7 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">Clan Members</span>
-                    <span class="info-box-number">13</span>
+                    <span class="info-box-number">{{$members->count()}}</span>
                 </div>
             </div>
         </div>
