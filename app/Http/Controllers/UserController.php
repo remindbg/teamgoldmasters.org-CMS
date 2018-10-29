@@ -12,7 +12,7 @@ class UserController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('ísAdmin');
+        $this->middleware('isAdmin');
     }
     /**
      * Display a listing of the resource.

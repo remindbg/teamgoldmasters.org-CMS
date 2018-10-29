@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
 
            $allarticles = Article::orderBy('created_at','desc')->get();
            $allcategories = Category::all();
-            $members = Members::all();
+           $members = Members::all();
            $view->with(compact('allarticles','allcategories','members'));
 
         });
